@@ -9,7 +9,7 @@ export default function Content() {
   const { view } = useContext(ViewContext);
 
   return (
-    <div className='w-full md:max-w-6xl mt-7 lg:px-0 h-3/4'>
+    <div className='w-full md:max-w-6xl mt-7 lg:px-0 h-2/3 mb-10'>
       {view === 0 && (
         <Card>
           <div className='flex md:flex-row flex-col md:text-left text-center md:gap-10 gap-16 items-center'>
@@ -22,27 +22,77 @@ export default function Content() {
                 Philippines Taguig (2023). I specialize in Fullstack
                 Development. I'm currently focused in building my own projects.
               </p>
-              {/* <span className='text-2xl'>
-                Check out my,{" "}
-                <a
-                  href='https://github.com/jbjalandoon'
-                  target='_blank'
-                  className='underline underline-offset-8'>
-                  Github
-                </a>{" "}
-                and{" "}
-                <a
-                  href='https://www.linkedin.com/in/jbjalandoon/'
-                  target='_blank'
-                  className='underline underline-offset-8'>
-                  Linkedin
-                </a>
-              </span> */}
             </div>
           </div>
         </Card>
       )}
-      {view === 1 && <Card>About Me</Card>}
+      {view === 1 && (
+        <Card>
+          <div className='flex gap-10 flex-col justify-center'>
+            <h1 className='text-4xl'>About Me</h1>
+            <div className='flex gap-10'>
+              <div className='text-md flex flex-col w-1/2 gap-4'>
+                <p>
+                  {" "}
+                  Hello, My name is Jerome and I enjoy web development. The
+                  interest in web development started when I was a graduating
+                  student at PUP - Taguig where I created a web application for
+                  my capstone project.{" "}
+                </p>
+                <p>
+                  I'm a consistent academic achiever in my University where I
+                  always achieve President's Lister every school year. My
+                  capstone team is also the best capstone in the batch 2021.
+                </p>
+                <p>
+                  Currently, I'm working in my personal projects and I'm open to
+                  job opportunities where I can contribute, grow, and learn. if
+                  you have a good opportunities that I can contribute then don't
+                  hesitate to contact me.
+                </p>
+              </div>
+              <div className='flex flex-col w-1/2 gap-4 items-center'>
+                <h3 className='text-2xln'>My Skills</h3>
+                <div className='flex flex-wrap gap-4'>
+                  <span className='bg-slate-200 text-md font-bold text-black py-2 px-4 rounded-2xl'>
+                    HTML
+                  </span>
+                  <span className='bg-slate-200 text-md font-bold text-black py-2 px-4 rounded-2xl'>
+                    CSS
+                  </span>
+                  <span className='bg-slate-200 text-md font-bold text-black py-2 px-4 rounded-2xl'>
+                    JavaScript (ES6+)
+                  </span>
+                  <span className='bg-slate-200 text-md font-bold text-black py-2 px-4 rounded-2xl'>
+                    Tailwind
+                  </span>
+                  <span className='bg-slate-200 text-md font-bold text-black py-2 px-4 rounded-2xl'>
+                    React
+                  </span>
+                  <span className='bg-slate-200 text-md font-bold text-black py-2 px-4 rounded-2xl'>
+                    NextJS
+                  </span>
+                  <span className='bg-slate-200 text-md font-bold text-black py-2 px-4 rounded-2xl'>
+                    NodeJS
+                  </span>
+                  <span className='bg-slate-200 text-md font-bold text-black py-2 px-4 rounded-2xl'>
+                    ExpressJS
+                  </span>
+                  <span className='bg-slate-200 text-md font-bold text-black py-2 px-4 rounded-2xl'>
+                    MongoDB
+                  </span>
+                  <span className='bg-slate-200 text-md font-bold text-black py-2 px-4 rounded-2xl'>
+                    MySQL
+                  </span>
+                  <span className='bg-slate-200 text-md font-bold text-black py-2 px-4 rounded-2xl'>
+                    Git
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+      )}
       {view === 2 && <Card>Projects</Card>}
       {view === 3 && <Card>Contact Me</Card>}
     </div>

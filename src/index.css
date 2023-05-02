@@ -6,6 +6,10 @@ body {
   @apply bg-slate-800 text-slate-200 overflow-x-hidden;
 }
 
+div::-webkit-scrollbar {
+  display: none;
+}
+
 .nav-link {
   @apply cursor-pointer after:w-0 hover:after:opacity-100 after:opacity-0 after:absolute after:h-0.5 after:origin-center hover:after:origin-center after:top-full after:transition-all after:duration-500 after:left-0 after:bg-slate-100 relative hover:after:w-full;
 }
