@@ -5,8 +5,26 @@ export default {
     extend: {
       keyframes: {
         "slide-left": {
-          "0%": { transform: "translateX(200%)", opacity: "0%" },
+          "0%": { transform: "translateX(200%)", opacity: "20%" },
           "100%": { transform: "translateX(0)", opacity: "100%" },
+        },
+        "card-transition": {
+          "0%": {
+            transform: "scaleY(0) scaleX(0) translateX(500%)",
+          },
+          "20%": {
+            transform: "translateX(0) scaleX(0) scaleY(100%)",
+          },
+          "40%": {
+            transform: "translateX(0) scaleX(100%) scaleY(100%)",
+          },
+          "60%": {
+            transform: "translateX(0) scaleX(100%) scaleY(100%)",
+          },
+          "80%": {
+            transform: "translateX(0) scaleX(100%) scaleY(100%)",
+          },
+          "100%": { transform: "scaleY(100%) scaleX(100%)" },
         },
         "slide-right": {
           "0%": { transform: "translateX(-200%)", opacity: "0%" },
@@ -14,8 +32,9 @@ export default {
         },
       },
       animation: {
-        "slide-left": "slide-left 1250ms ease",
+        "slide-left": "slide-left 1000ms ease",
         "slide-right": "slide-right 1250ms ease",
+        "card-transition": "card-transition 2000ms ease",
       },
     },
   },

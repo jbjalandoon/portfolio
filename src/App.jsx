@@ -8,7 +8,7 @@ function App() {
 
   return (
     <main className='flex w-full flex-col pt-14 items-center h-screen'>
-      <Header items={views} title='JEROME JALANDOON' />
+      <Header items={views} />
       <Content items={views} />
     </main>
   );
