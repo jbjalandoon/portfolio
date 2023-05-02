@@ -9,7 +9,7 @@ export default function Content() {
   const { view } = useContext(ViewContext);
 
   return (
-    <div className='w-full md:max-w-6xl mt-7 lg:px-0 h-full'>
+    <div className='w-full md:max-w-6xl mt-7 lg:px-0 h-3/4'>
       {view === 0 && (
         <Card>
           <div className='flex md:flex-row flex-col md:text-left text-center md:gap-10 gap-16 items-center'>
