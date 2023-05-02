@@ -1,11 +1,32 @@
 import { useContext } from "react";
-import developer from "../../assets/developer.svg";
-import github from "../../assets/github.svg";
-import linkedin from "../../assets/linkedin.svg";
 import Card from "./Card";
 import { ViewContext } from "../../store/ViewContext";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Content() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_1byxo4f",
+        "template_737lset",
+        form.current,
+        "oPD4OzxFW6nrtqGFF"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   const { view } = useContext(ViewContext);
 
   return (
@@ -94,7 +115,39 @@ export default function Content() {
         </Card>
       )}
       {view === 2 && <Card>Projects</Card>}
-      {view === 3 && <Card>Contact Me</Card>}
+      {view === 3 && (
+        <Card>
+          <div className='w-full flex justify-center'>
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className='flex flex-col w-1/2 gap-4'>
+              <label>Name</label>
+              <input
+                type='text'
+                name='from_name'
+                className='w-full h-9 rounded-2xl px-3 text-black'
+              />
+              <label>Email</label>
+              <input
+                type='email'
+                name='from_email'
+                className='w-full h-9 rounded-2xl px-3 text-black'
+              />
+              <label>Message</label>
+              <textarea
+                name='message'
+                className='w-full h-24 rounded-2xl resize-none px-3 text-black pt-2'
+              />
+              <input
+                type='submit'
+                value='Send'
+                className='bg-blue-800 py-2 rounded-3xl cursor-pointer hover:bg-blue-950 transition-colors ease-in duration-200'
+              />
+            </form>
+          </div>
+        </Card>
+      )}
     </div>
   );
 }
