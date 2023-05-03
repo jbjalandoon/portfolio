@@ -4,6 +4,7 @@ import { ViewContext } from "../../store/ViewContext";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 
+
 export default function Content() {
   const form = useRef();
 
@@ -12,10 +13,10 @@ export default function Content() {
 
     emailjs
       .sendForm(
-        "service_1byxo4f",
-        "template_737lset",
+        import.meta.env.VITE_EMAIL_SERVICE_ID,
+        import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         form.current,
-        "oPD4OzxFW6nrtqGFF"
+        import.meta.env.VITE_EMAIL_API_KEY
       )
       .then(
         (result) => {
