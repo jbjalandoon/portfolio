@@ -36,6 +36,16 @@ export default {
         "slide-right": "slide-right 1250ms ease",
         "card-transition": "card-transition 2000ms ease",
       },
+      boxShadow: {
+        project: "0 0 0 1000px inset #0000008f, 0 0 45px 0 inset black;",
+      },
+      backgroundSize: {
+        "100%": "100%",
+        "125%": "125%",
+      },
+      transitionProperty: {
+        "background-size": "background-size",
+      },
     },
   },
   plugins: [],

@@ -3,14 +3,13 @@ import Card from "./Card";
 import { ViewContext } from "../../store/ViewContext";
 import React, { useRef } from "react";
 import Contact from "../contact";
+import Projects from "../projects";
 
 export default function Content() {
-  
-
   const { view } = useContext(ViewContext);
 
   return (
-    <div className='w-full md:max-w-6xl mt-7 lg:px-0 h-2/3 mb-10'>
+    <div className='w-full md:max-w-6xl mt-2 lg:px-0 h-2/3 mb-10'>
       {view === 0 && (
         <Card>
           <div className='flex md:flex-row flex-col md:text-left text-center md:gap-10 gap-16 items-center'>
@@ -94,9 +93,20 @@ export default function Content() {
           </div>
         </Card>
       )}
-      {view === 2 && <Card>Projects</Card>}
+      {view === 2 && (
+        <Card>
+          <div>
+            <h1 className='text-4xl mb-3'>Things that i've built</h1>
+            <p className="text-lg">Here are the things that I made using different technologies.</p>
+          </div>
+          <Projects />
+        </Card>
+      )}
       {view === 3 && (
         <Card>
+          <div>
+            <h1 className='text-4xl mb-3'>Get in touch with me.</h1>
+          </div>
           <Contact />
         </Card>
       )}

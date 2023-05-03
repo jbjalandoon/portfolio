@@ -30,7 +30,7 @@ export default function Contact() {
   };
 
   return (
-    <div className='w-full md:flex-row flex-col flex justify-center h-full items-center gap-14'>
+    <div className='w-full md:flex-row flex-col flex justify-center h-full gap-14'>
       <div className='w-1/4 flex flex-col gap-4'>
         <div className='flex flex-col gap-2'>
           <div className='text-xl font-bold flex gap-2'>

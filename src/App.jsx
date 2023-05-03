@@ -7,7 +7,7 @@ function App() {
   const views = ["home", "about me", "projects", "contact me"];
 
   return (
-    <main className='flex w-full flex-col pt-14 items-center h-screen'>
+    <main className='flex w-full flex-col items-center h-screen'>
       <Header items={views} />
       <Content items={views} />
       <div className=''>
