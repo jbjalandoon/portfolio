@@ -13,7 +13,7 @@ export default function Header({ items, title }) {
   return (
     <>
       <header
-        className={`w-1/2 md:left-auto left-1/2 md:animate-none shadow-xl md:shadow-none md:w-full md:flex-row flex-col z-50 md:bg-transparent bg-slate-950 flex md:h-20 h-screen items-center justify-center md:inline-flex max-w-4xl md:relative ${
+        className={`w-1/2 md:left-auto mt-12 left-1/2 md:animate-none shadow-xl md:shadow-none md:w-full md:flex-row flex-col z-50 md:bg-transparent bg-slate-950 flex md:h-12 h-screen items-center justify-center md:inline-flex max-w-4xl md:relative ${
           showHeader ? "absolute" : "hidden"
         } md:top-auto top-0`}>
         {/* <Title>{title}</Title> */}

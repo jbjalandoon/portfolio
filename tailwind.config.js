@@ -30,11 +30,30 @@ export default {
           "0%": { transform: "translateX(-200%)", opacity: "0%" },
           "100%": { transform: "translateX(0)", opacity: "100%" },
         },
+        blinking: {
+          from: { opacity: "0" },
+          to: { opacity: "100%" },
+        },
+        title: {
+          from: { top: "50%" },
+          to: { top: "24px", "font-size": "30px", "line-height": "36px" },
+        },
+        hide: {
+          from: { visibility: "visibile" },
+          to: { visibility: "hidden" },
+        },
+        enter: {
+          from: { opacity: "0%" },
+          to: { opacity: "100%" },
+        },
       },
       animation: {
         "slide-left": "slide-left 1000ms ease",
         "slide-right": "slide-right 1250ms ease",
         "card-transition": "card-transition 2000ms ease",
+        blinking: "blinking 650ms ease infinite",
+        title: "title 650ms ease 1 2.8s forwards",
+        enter: "enter 650ms ease 1 3.4s forwards",
       },
       boxShadow: {
         project: "0 0 0 1000px inset #0000008f, 0 0 45px 0 inset black;",
@@ -45,6 +64,9 @@ export default {
       },
       transitionProperty: {
         "background-size": "background-size",
+      },
+      fontFamily: {
+        sans: ["Rubik"],
       },
     },
   },
