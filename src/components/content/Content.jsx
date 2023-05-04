@@ -2,8 +2,8 @@ import { useContext } from "react";
 import Card from "./Card";
 import { ViewContext } from "../../store/ViewContext";
 import React, { useRef } from "react";
-import Contact from "../contact";
-import Projects from "../projects";
+import Contact from "../Contact";
+import Projects from "../Projects";
 
 export default function Content() {
   const { view } = useContext(ViewContext);

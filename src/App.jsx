@@ -33,7 +33,7 @@ function App() {
         {currentName}
         <span className='animate-blinking'>_</span>
       </p>
-      <main className='flex w-full flex-col pt-4 items-center h-screen animate-enter opacity-0'>
+      <main id="main" className='flex w-full flex-col pt-4 items-center h-screen animate-enter opacity-0'>
         <Header items={views} />
         <Content items={views} />
         <div className=''>

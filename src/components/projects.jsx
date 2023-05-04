@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { FaGithub, FaLink } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import ProjectItem from "./ProjectItem";
+import { createPortal } from "react-dom";
+import ProjectDetails from "./ProjectDetails";
 
-const SAMPLE_PROJECTS = [
+const PROJECTS = [
   {
     title: "Title 1",
     description: "Project Description",
@@ -11,7 +14,7 @@ const SAMPLE_PROJECTS = [
     subImages: ["https://picsum.photos/200"],
   },
   {
-    title: "Title 1",
+    title: "Title 2",
     description: "Project Description",
     github: "some link",
     link: "some link again",
@@ -19,7 +22,15 @@ const SAMPLE_PROJECTS = [
     subImages: ["https://picsum.photos/200"],
   },
   {
-    title: "Title 1",
+    title: "Title 3",
+    description: "Project Description",
+    github: "some link",
+    link: "some link again",
+    mainImage: "https://picsum.photos/200",
+    subImages: ["https://picsum.photos/200"],
+  },
+  {
+    title: "Title 4",
     description: "Project Description",
     github: "some link",
     link: "some link again",
@@ -29,17 +40,36 @@ const SAMPLE_PROJECTS = [
 ];
 
 export default function Projects() {
+  const [index, setIndex] = useState(0);
+  const [projectOpened, setProjectOpened] = useState(null);
+
+  const openProjectHandler = (e) => {
+    setProjectOpened(e.currentTarget.getAttribute("index"));
+  };
+
+  const closeProjectHandler = () => {
+    setProjectOpened(null);
+  };
+
   return (
-    <div className='flex gap-10 flex-wrap justify-center'>
-      <div className="text-center pt-4 cursor-pointer text-xl border-4 border-green-500 shadow-project bg-100% hover:bg-125% transition-background-size duration-300 ease-in bg-no-repeat bg-center bg-opacity-0 rounded-lg h-64 w-72 bg-[url('https://picsum.photos/200')]">
-        Title 1
+    <>
+      <div className='relative flex flex-wrap justify-center gap-10'>
+        {PROJECTS.map((e, i) => (
+          <ProjectItem
+            title={e.title}
+            image={e.mainImage}
+            key={e.title}
+            index={i}
+            onOpenProject={openProjectHandler}
+          />
+        ))}
       </div>
-      <div className="text-center pt-4 cursor-pointer text-xl border-4 border-green-500 shadow-project bg-100% hover:bg-125% transition-background-size duration-300 ease-in bg-no-repeat bg-center bg-opacity-0 rounded-lg h-64 w-72 bg-[url('https://picsum.photos/200')]">
-        Title 2
-      </div>
-      <div className="text-center pt-4 cursor-pointer text-xl border-4 border-green-500 shadow-project bg-100% hover:bg-125% transition-background-size duration-300 ease-in bg-no-repeat bg-center bg-opacity-0 rounded-lg h-64 w-72 bg-[url('https://picsum.photos/200')]">
-        Title 3
-      </div>
-    </div>
+
+      {projectOpened !== null &&
+        createPortal(
+          <ProjectDetails onProjectClose={closeProjectHandler} />,
+          document.getElementById("project")
+        )}
+    </>
   );
 }
