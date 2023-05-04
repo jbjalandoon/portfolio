@@ -39,7 +39,7 @@ export default {
           to: { top: "24px", "font-size": "30px", "line-height": "36px" },
         },
         hide: {
-          from: { visibility: "visibile" },
+          from: { visibility: "visible" },
           to: { visibility: "hidden" },
         },
         enter: {
@@ -52,6 +52,7 @@ export default {
         "slide-right": "slide-right 1250ms ease",
         "card-transition": "card-transition 2000ms ease",
         blinking: "blinking 650ms ease infinite",
+        hide: "hide 500ms ease",
         title: "title 650ms ease 1 2.8s forwards",
         enter: "enter 650ms ease 1 3.4s forwards",
       },
