@@ -46,6 +46,10 @@ export default {
           from: { opacity: "0%" },
           to: { opacity: "100%" },
         },
+        "svg-stroke-fill": {
+          from: { "stroke-dashoffset": 880 },
+          to: { "stroke-dashoffset": 0 },
+        },
       },
       animation: {
         "slide-left": "slide-left 1000ms ease",
@@ -55,6 +59,9 @@ export default {
         hide: "hide 500ms ease",
         title: "title 650ms ease 1 2.8s forwards",
         enter: "enter 650ms ease 1 3.4s forwards",
+        "enter-1000": "enter 650ms ease 1 1000ms forwards",
+        "enter-instant": "enter 300ms ease forwards",
+        "svg-stroke-fill": "svg-stroke-fill 1000ms ease-in-out forwards",
       },
       boxShadow: {
         project: "0 0 0 1000px inset #0000008f, 0 0 45px 0 inset black;",
@@ -65,6 +72,7 @@ export default {
       },
       transitionProperty: {
         "background-size": "background-size",
+        "stroke-dashoffset": "stroke-dashoffset",
       },
       fontFamily: {
         sans: ["Rubik"],

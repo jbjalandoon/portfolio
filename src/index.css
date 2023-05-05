@@ -6,8 +6,8 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-900 text-slate-200 overflow-x-hidden flex flex-col items-center;
-  font-family: 'Poppins', sans-serif;
+  @apply flex flex-col items-center overflow-x-hidden bg-slate-900 text-slate-200;
+  font-family: "Poppins", sans-serif;
 }
 
 #root {
@@ -19,9 +19,18 @@ div::-webkit-scrollbar {
 }
 
 .nav-link {
-  @apply cursor-pointer after:w-0 hover:after:opacity-100 after:opacity-0 after:absolute after:h-0.5 after:origin-center hover:after:origin-center after:top-full after:transition-all after:duration-500 after:left-0 after:bg-slate-100 relative hover:after:w-full;
+  @apply relative cursor-pointer after:absolute after:left-0 after:top-full after:h-0.5 after:w-0 after:origin-center after:bg-slate-100 after:opacity-0 after:transition-all after:duration-500 hover:after:w-full hover:after:origin-center hover:after:opacity-100;
 }
 
 .active {
-  @apply after:translate-x-0 after:w-full after:opacity-100;
+  @apply after:w-full after:translate-x-0 after:opacity-100;
+}
+
+.rect {
+  stroke-dasharray: 880;
+  stroke-dashoffset: 880;
+}
+
+.rect-opened {
+  stroke-dashoffset: 0;
 }
