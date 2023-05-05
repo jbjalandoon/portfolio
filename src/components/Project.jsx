@@ -61,42 +61,24 @@ export default function Projects() {
 
   return (
     <>
-      <div className='project-lists relative flex flex-wrap items-center justify-center gap-10'>
-        <div
-          className={`absolute -left-14 ${index === 0 && "hidden"} text-2xl`}>
-          <button onClick={prevHandler}>
-            <FaChevronLeft />
-          </button>
+      <div className='mt-0 flex flex-col justify-center gap-10 md:mt-28'>
+        <div>
+          <h1 className='mb-3 text-4xl'>Things that i've built</h1>
+          <p className='text-lg'>
+            Here are the things that I made using different technologies.
+          </p>
         </div>
-        <div
-          className={`absolute ${
-            index + 2 === PROJECTS.length - 1 && "hidden"
-          } -right-14 text-2xl`}>
-          <button onClick={nextHandler}>
-            <FaChevronRight />
-          </button>
+        <div className='flex flex-wrap gap-10 justify-evenly mb-14'>
+          {PROJECTS.map((e, i) => (
+            <ProjectItem
+              title={e.title}
+              image={e.mainImage}
+              key={e.title}
+              index={i}
+              onOpenProject={openProjectHandler}
+            />
+          ))}
         </div>
-        <ProjectItem
-          title={PROJECTS[index].title}
-          image={PROJECTS[index].mainImage}
-          key={PROJECTS[index].title}
-          index={index}
-          onOpenProject={openProjectHandler}
-        />
-        <ProjectItem
-          title={PROJECTS[index + 1].title}
-          image={PROJECTS[index + 1].mainImage}
-          key={PROJECTS[index + 1].title}
-          index={index + 1}
-          onOpenProject={openProjectHandler}
-        />
-        <ProjectItem
-          title={PROJECTS[index + 2].title}
-          image={PROJECTS[index + 2].mainImage}
-          key={PROJECTS[index + 2].title}
-          index={index + 2}
-          onOpenProject={openProjectHandler}
-        />
       </div>
 
       {projectOpened !== null &&

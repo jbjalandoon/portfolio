@@ -12,7 +12,7 @@ export default function NavItem({ className, title }) {
 
   return (
     <li
-      className={`nav-link first-letter:capitalize ${className}`}
+      className={`nav-link 2xs:text-md text-xs first-letter:capitalize xs:text-lg md:text-xl ${className}`}
       onClick={switchViewHandler}>
       {title}
     </li>

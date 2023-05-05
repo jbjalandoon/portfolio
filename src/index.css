@@ -14,10 +14,6 @@ body {
   @apply flex flex-col items-center;
 }
 
-div::-webkit-scrollbar {
-  @apply hidden;
-}
-
 .nav-link {
   @apply relative cursor-pointer after:absolute after:left-0 after:top-full after:h-0.5 after:w-0 after:origin-center after:bg-slate-100 after:opacity-0 after:transition-all after:duration-500 hover:after:w-full hover:after:origin-center hover:after:opacity-100;
 }

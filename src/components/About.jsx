@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div className='flex flex-col justify-center gap-10'>
-      <h1 className='text-4xl text-center md:text-center'>About Me</h1>
+      <h1 className='text-4xl text-left'>About Me</h1>
       <div className='flex-col justify-center items-center gap-10 flex md:flex-row'>
         <div className='text-md flex md:w-1/2 w-full flex-col gap-4'>
           <p>

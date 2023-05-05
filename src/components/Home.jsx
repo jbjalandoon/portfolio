@@ -1,10 +1,10 @@
 export default function Home() {
   return (
-    <div className='flex flex-col items-center gap-16 text-center md:flex-row md:gap-10 md:text-left'>
+    <div className='flex flex-col justify-center gap-10'>
       <div className='flex flex-col gap-8'>
-        <span className='text-xl'>Hello, my name is</span>
-        <span className='text-7xl'>Jerome Jalandoon.</span>
-        <span className='text-5xl'>I'm a Web Developer.</span>
+        <span className='text-2xl'>Hello, my name is</span>
+        <span className='sm:text-7xl xs:text-6xl text-4xl'>Jerome Jalandoon.</span>
+        <span className='sm:text-5xl xs:text-4xl text-3xl'>I'm a Web Developer.</span>
         <p className='w-full text-lg md:w-3/5'>
           I'm a graduating student in Polytechnic University of the Philippines
           Taguig (2023). I specialize in Fullstack Development. I'm currently

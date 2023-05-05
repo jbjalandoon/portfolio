@@ -29,14 +29,14 @@ function App() {
 
   return (
     <>
-      <p className='text-6xl absolute md:visible invisible top-1/2 animate-title'>
+      <p className='md:text-6xl text-2xl absolute top-1/2 animate-title'>
         {currentName}
         <span className='animate-blinking'>_</span>
       </p>
-      <main id="main" className='flex w-full flex-col pt-4 items-center h-screen animate-enter opacity-0'>
+      <main id="main" className='flex w-full flex-col items-center md:h-screen h-fit animate-enter opacity-0'>
         <Header items={views} />
         <Content items={views} />
-        <div className=''>
+        <div className='relative bottom-0 h-24 w-full justify-center items-center flex'>
           <ul className='flex gap-6 text-2xl'>
             <li>
               <a href='mailto:jerome.jalandoon@gmail.com'>

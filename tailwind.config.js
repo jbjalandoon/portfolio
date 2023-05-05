@@ -3,6 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        '2xs': '320px',
+        'xs': '425px'
+      },
       content: {
         "chevron-right": "url('./src/assets/chevronRight.svg')",
         "chevron-left": "url('./src/assets/chevronLeft.svg')",
@@ -40,7 +44,7 @@ export default {
         },
         title: {
           from: { top: "50%" },
-          to: { top: "24px", "font-size": "30px", "line-height": "36px" },
+          to: { top: "24px", "font-size": "24px", "line-height": "32px" },
         },
         hide: {
           from: { visibility: "visible" },
