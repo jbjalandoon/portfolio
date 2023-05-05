@@ -7,7 +7,7 @@ import Projects from "./Project";
 import About from "./About";
 import Home from "./Home";
 
-export default function Content() {
+export default function Contents() {
   const { view } = useContext(ViewContext);
 
   return (
