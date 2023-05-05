@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ViewContext } from "../../store/ViewContext";
+import { ViewContext } from "../store/ViewContext";
 
 export default function Card({ children, className }) {
   const { animationClass } = useContext(ViewContext);

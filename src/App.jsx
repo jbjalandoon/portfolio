@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "./App.css";
-import Content from "./components/content/Content";
+import Content from "./components/Content";
 import Header from "./components/headers/Header";
 import { useEffect, useState } from "react";
 
