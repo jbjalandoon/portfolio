@@ -2,7 +2,7 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { FaPhoneAlt, FaRegAddressBook, FaEnvelope } from "react-icons/fa";
 
-export default function Contact() {
+export default function Contacts() {
   const form = useRef();
   const [isSending, setIsSending] = useState(false);
 

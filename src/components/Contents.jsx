@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Card from "./Card";
 import { ViewContext } from "../store/ViewContext";
 import React, { useRef } from "react";
-import Contact from "./Contact";
+import Contacts from "./Contacts";
 import Projects from "./Project";
 import About from "./About";
 import Home from "./Home";
@@ -29,7 +29,7 @@ export default function Contents() {
       )}
       {view === 3 && (
         <Card>
-          <Contact />
+          <Contacts />
         </Card>
       )}
     </div>
