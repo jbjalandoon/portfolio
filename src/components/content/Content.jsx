@@ -24,7 +24,6 @@ export default function Content() {
       )}
       {view === 2 && (
         <Card>
-          
           <Projects />
         </Card>
       )}
