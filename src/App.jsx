@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "./App.css";
-import Content from "./components/Content";
+import Contents from "./components/Contents";
 import Header from "./components/headers/Header";
 import { useEffect, useState } from "react";
 
@@ -35,7 +35,7 @@ function App() {
       </p>
       <main id="main" className='flex w-full flex-col items-center md:h-screen h-fit animate-enter opacity-0'>
         <Header items={views} />
-        <Content items={views} />
+        <Contents items={views} />
         <div className='relative bottom-0 h-24 w-full justify-center items-center flex'>
           <ul className='flex gap-6 text-2xl'>
             <li>
