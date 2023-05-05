@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-      <p className='text-6xl absolute top-1/2 animate-title'>
+      <p className='text-6xl absolute md:visible invisible top-1/2 animate-title'>
         {currentName}
         <span className='animate-blinking'>_</span>
       </p>
