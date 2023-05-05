@@ -25,12 +25,3 @@ div::-webkit-scrollbar {
 .active {
   @apply after:w-full after:translate-x-0 after:opacity-100;
 }
-
-.rect {
-  stroke-dasharray: 880;
-  stroke-dashoffset: 880;
-}
-
-.rect-opened {
-  stroke-dashoffset: 0;
-}

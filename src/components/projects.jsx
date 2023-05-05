@@ -54,16 +54,38 @@ export default function Projects() {
 
   return (
     <>
-      <div className='relative flex flex-wrap justify-center gap-10'>
-        {PROJECTS.map((e, i) => (
-          <ProjectItem
-            title={e.title}
-            image={e.mainImage}
-            key={e.title}
-            index={i}
-            onOpenProject={openProjectHandler}
-          />
-        ))}
+      <div className='project-lists relative flex flex-wrap items-center justify-center gap-10'>
+        <div className='absolute -left-14 text-2xl'>
+          <button>
+            <FaChevronLeft />
+          </button>
+        </div>
+        <div className='absolute -right-14 text-2xl'>
+          <button>
+            <FaChevronRight />
+          </button>
+        </div>
+        <ProjectItem
+          title={PROJECTS[index].title}
+          image={PROJECTS[index].mainImage}
+          key={PROJECTS[index].title}
+          index={index}
+          onOpenProject={openProjectHandler}
+        />
+        <ProjectItem
+          title={PROJECTS[index + 1].title}
+          image={PROJECTS[index + 1].mainImage}
+          key={PROJECTS[index + 1].title}
+          index={index + 1}
+          onOpenProject={openProjectHandler}
+        />
+        <ProjectItem
+          title={PROJECTS[index + 2].title}
+          image={PROJECTS[index + 2].mainImage}
+          key={PROJECTS[index + 2].title}
+          index={index + 2}
+          onOpenProject={openProjectHandler}
+        />
       </div>
 
       {projectOpened !== null &&

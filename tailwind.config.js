@@ -3,6 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      content: {
+        "chevron-right": "url('./src/assets/chevronRight.svg')",
+        "chevron-left": "url('./src/assets/chevronLeft.svg')",
+      },
       keyframes: {
         "slide-left": {
           "0%": { transform: "translateX(200%)", opacity: "20%" },
