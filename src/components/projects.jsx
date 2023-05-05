@@ -52,16 +52,27 @@ export default function Projects() {
     setProjectOpened(null);
   };
 
+  const prevHandler = () => {
+    setIndex((prevState) => prevState - 1);
+  };
+  const nextHandler = () => {
+    setIndex((prevState) => prevState + 1);
+  };
+
   return (
     <>
       <div className='project-lists relative flex flex-wrap items-center justify-center gap-10'>
-        <div className='absolute -left-14 text-2xl'>
-          <button>
+        <div
+          className={`absolute -left-14 ${index === 0 && "hidden"} text-2xl`}>
+          <button onClick={prevHandler}>
             <FaChevronLeft />
           </button>
         </div>
-        <div className='absolute -right-14 text-2xl'>
-          <button>
+        <div
+          className={`absolute ${
+            index + 2 === PROJECTS.length - 1 && "hidden"
+          } -right-14 text-2xl`}>
+          <button onClick={nextHandler}>
             <FaChevronRight />
           </button>
         </div>
