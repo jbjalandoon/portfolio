@@ -6,36 +6,37 @@ import ProjectDetails from "./ProjectDetails";
 
 const PROJECTS = [
   {
-    title: "Title 1",
-    description: "Project Description",
-    github: "some link",
+    title: "My Portfolio",
+    description:
+      "You're looking at it! This website was a lot of work and I'm really proud of some of the results I got, such as the svg animations and the overall aesthetic.",
+    github: "https://github.com/jbjalandoon/alcs",
     link: "some link again",
+    technologies: ["Tailwind", "React"],
     mainImage: "https://picsum.photos/200",
-    subImages: ["https://picsum.photos/200"],
   },
   {
     title: "Title 2",
     description: "Project Description",
     github: "some link",
+    technologies: ["Tailwind", "React"],
     link: "some link again",
     mainImage: "https://picsum.photos/200",
-    subImages: ["https://picsum.photos/200"],
   },
   {
     title: "Title 3",
     description: "Project Description",
     github: "some link",
+    technologies: ["Tailwind", "React"],
     link: "some link again",
     mainImage: "https://picsum.photos/200",
-    subImages: ["https://picsum.photos/200"],
   },
   {
     title: "Title 4",
     description: "Project Description",
     github: "some link",
+    technologies: ["Tailwind", "React"],
     link: "some link again",
     mainImage: "https://picsum.photos/200",
-    subImages: ["https://picsum.photos/200"],
   },
 ];
 
@@ -67,7 +68,10 @@ export default function Projects() {
 
       {projectOpened !== null &&
         createPortal(
-          <ProjectDetails onProjectClose={closeProjectHandler} />,
+          <ProjectDetails
+            details={PROJECTS[projectOpened]}
+            onProjectClose={closeProjectHandler}
+          />,
           document.getElementById("project")
         )}
     </>

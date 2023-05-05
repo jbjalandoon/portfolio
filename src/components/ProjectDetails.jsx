@@ -1,7 +1,7 @@
 import { FaLink, FaGithub } from "react-icons/fa";
 import { SiTailwindcss, SiReact } from "react-icons/si";
 
-export default function ProjectDetails({ onProjectClose }) {
+export default function ProjectDetails({ onProjectClose, details }) {
   return (
     <div className='absolute left-0 top-0 flex h-screen w-full animate-enter-instant items-center justify-center opacity-0'>
       <div className='bg relative z-40 flex h-3/4 w-3/4 justify-center rounded-3xl border-4 border-green-600 bg-[url("https://c4.wallpaperflare.com/wallpaper/568/232/7/texture-simple-dark-simple-background-wallpaper-preview.jpg")] bg-cover bg-no-repeat px-10 py-10 shadow-inner md:px-32 md:py-20'>
