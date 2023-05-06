@@ -61,34 +61,26 @@ export default function Projects() {
 
   return (
     <>
-      <div className='md:mt-80 sm:mt-80 -mt-6 flex flex-col justify-center gap-10 lg:mt-64 xl:mt-0'>
+      <div className='flex w-full flex-col gap-10'>
         <div>
           <h1 className='mb-3 text-4xl'>Things that i've built</h1>
           <p className='text-lg'>
             Here are the things that I made using different technologies.
           </p>
         </div>
-        <div className='mb-14 flex flex-wrap justify-evenly gap-10'>
-          {PROJECTS.map((e, i) => (
+        <div className='grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
+          {PROJECTS.map((e) => (
             <ProjectItem
               title={e.title}
-              image={e.mainImage}
               key={e.title}
-              index={i}
-              onOpenProject={openProjectHandler}
+              description={e.description}
+              technologies={e.technologies}
+              github={e.github}
+              link={e.link}
             />
           ))}
         </div>
       </div>
-
-      {projectOpened !== null &&
-        createPortal(
-          <ProjectDetails
-            details={PROJECTS[projectOpened]}
-            onProjectClose={closeProjectHandler}
-          />,
-          document.getElementById("project")
-        )}
     </>
   );
 }

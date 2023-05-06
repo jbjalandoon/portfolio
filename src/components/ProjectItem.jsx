@@ -1,12 +1,37 @@
-import { createPortal } from "react-dom";
+import { FaCode } from "react-icons/fa";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 
-export default function ProjectItem({ title, image, onOpenProject, index }) {
+export default function ProjectItem({
+  title,
+  github,
+  description,
+  link,
+  technologies,
+}) {
   return (
-    <div
-      className={`h-64 w-72 cursor-pointer rounded-lg border-4 border-green-500 bg-opacity-0 bg-[url("https://fastly.picsum.photos/id/782/200/200.jpg?hmac=Nr26GoCvc_dj_OlbYWA8FscuVWhRo7Qa-f4z6gfbSOU")] bg-100% bg-center bg-no-repeat pt-4 text-center text-xl shadow-project transition-background-size duration-300 ease-in hover:bg-125%`}
-      onClick={onOpenProject}
-      index={index}>
-      {title}
+    <div className='relative flex h-72 w-full flex-col gap-7 rounded bg-blue-950 px-5 py-5 shadow-lg '>
+      <div className='flex items-center justify-center text-2xl'>
+        <span className='text-3xl'>
+          <FaCode />
+        </span>
+        <div className='ml-auto flex gap-4'>
+          <a href={github} target='_blank'>
+            <FiGithub />
+          </a>
+          <a href={link} target="_blank">
+            <FiExternalLink />
+          </a>
+        </div>
+      </div>
+      <div className='flex flex-col gap-4'>
+        <span className='text-xl font-semibold'>{title}</span>
+        <span className='text-xs'>{description}</span>
+      </div>
+      <div className='absolute bottom-10 flex flex-wrap gap-4 text-xs font-light'>
+        {technologies.map((e) => (
+          <span key={e}>{e}</span>
+        ))}
+      </div>
     </div>
   );
 }
