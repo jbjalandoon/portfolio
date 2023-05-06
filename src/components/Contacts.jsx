@@ -30,71 +30,46 @@ export default function Contacts() {
   };
 
   return (
-    <div className='flex w-full flex-col gap-6 px-24 max-w-7xl min-w-fit'>
-      <div>
+    <div className='g-4 flex w-full min-w-fit max-w-7xl flex-col gap-10'>
+      <div className='flex flex-col gap-1'>
         <h1 className='mb-3 text-4xl'>Get in touch with me.</h1>
+        <p>
+          I'm currently looking for a job opportunities, if you think I can
+          contribute to your company. Send me a message!
+        </p>
       </div>
       <div className='flex h-full w-full flex-col justify-center gap-14 md:flex-row'>
-        <div className='flex w-full flex-col justify-center gap-4 md:w-1/4'>
-          <div className='flex flex-col gap-2'>
-            <div className='flex gap-2 text-xl font-bold'>
-              <FaPhoneAlt />
-              PHONE
-            </div>
-            <span> 09095313123</span>
-          </div>
-          <div className='flex flex-col gap-2'>
-            <div className='flex gap-2 text-xl font-bold'>
-              <FaRegAddressBook />
-              ADDRESS
-            </div>
-            <span> Metro Manila, Taguig City</span>
-          </div>
-          <div className='flex flex-col gap-2'>
-            <div className='flex gap-2 text-xl font-bold'>
-              <FaEnvelope />
-              EMAIL
-            </div>
-            <span> email@gmail.com</span>
-          </div>
-        </div>
         <form
           ref={form}
           onSubmit={sendEmail}
           className='flex w-full flex-col justify-center gap-4'>
-          <div className='flex flex-col gap-2'>
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
             <input
               type='text'
               name='from_name'
-              placeholder='name'
-              className='h-9 w-full rounded-md bg-slate-800 px-3 text-slate-200'
+              placeholder='Name'
+              className='h-14 w-full rounded-md bg-slate-800 px-3 text-slate-200'
             />
             <input
               type='email'
               name='from_email'
-              placeholder='email'
-              className='h-9 w-full rounded-md bg-slate-800 px-3 text-slate-200'
+              placeholder='Email'
+              className='h-14 w-full rounded-md bg-slate-800 px-3 text-slate-200'
             />
           </div>
           <div>
             <textarea
               name='message'
-              className='h-24 w-full resize-none rounded-md bg-slate-800 px-3 pt-2 text-slate-200'
-              placeholder='message'
+              className='h-24 w-full rounded-md bg-slate-800 px-3 pt-2 text-slate-200'
+              placeholder='Message'
             />
           </div>
-          <div className='flex gap-4'>
+          <div className='ml-auto flex w-full gap-4 md:w-60'>
             <button
               type='submit'
-              className='w-24 cursor-pointer rounded-xl bg-blue-800 py-2 transition-colors duration-200 ease-in hover:bg-blue-950 disabled:cursor-not-allowed'
+              className='relative w-full  cursor-pointer rounded-md border-2 border-green-700 bg-transparent py-2 font-bold transition-all duration-500 ease-in after:absolute after:left-0 after:top-0 after:-z-50 after:h-full after:w-0 after:bg-green-700 after:transition-all after:duration-1000 hover:text-black hover:after:w-full disabled:cursor-not-allowed'
               disabled={isSending}>
-              {isSending ? "Sending..." : "Send"}
-            </button>
-            <button
-              type='button'
-              className='w-24 cursor-pointer rounded-xl bg-blue-800 py-2 transition-colors duration-200 ease-in hover:bg-blue-950 disabled:cursor-not-allowed'
-              disabled={isSending}>
-              Clear
+              {isSending ? "Sending..." : "Send Message"}
             </button>
           </div>
         </form>
