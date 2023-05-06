@@ -1,9 +1,9 @@
 export default function About() {
   return (
     <div className='flex flex-col justify-center gap-10'>
-      <h1 className='text-4xl text-left'>About Me</h1>
-      <div className='flex-col justify-center items-center gap-10 flex md:flex-row'>
-        <div className='text-md flex md:w-1/2 w-full flex-col gap-4'>
+      <h1 className='text-left text-4xl font-bold'>About Me</h1>
+      <div className='flex flex-col justify-center gap-10 md:flex-row'>
+        <div className='text-md flex w-full flex-col gap-4 font-light md:w-1/2'>
           <p>
             {" "}
             Hello, My name is Jerome and I enjoy web development. The interest
@@ -22,8 +22,8 @@ export default function About() {
             contact me.
           </p>
         </div>
-        <div className='flex md:w-1/2 w-full flex-col items-center gap-4'>
-          <h3 className='text-2xln'>My Skills</h3>
+        <div className='flex w-full flex-col gap-14 md:w-1/2'>
+          <h3 className='text-2xl font-bold'>My Skills</h3>
           <div className='flex flex-wrap gap-4'>
             <span className='text-md rounded-2xl bg-slate-200 px-4 py-2 font-bold text-black'>
               HTML

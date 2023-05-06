@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        '2xs': '320px',
-        'xs': '425px'
+        "2xs": "320px",
+        xs: "425px",
       },
       content: {
         "chevron-right": "url('./src/assets/chevronRight.svg')",
