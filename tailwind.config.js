@@ -58,9 +58,18 @@ export default {
           from: { "stroke-dashoffset": 880 },
           to: { "stroke-dashoffset": 0 },
         },
+        grow: {
+          from: { transform: "scale(0)" },
+          to: { transform: "scale(1)" },
+        },
+        countdown: {
+          from: { width: "100%" },
+          to: { width: "0%" },
+        },
       },
       animation: {
         "slide-left": "slide-left 1000ms ease",
+        grow: "grow 100ms ease,  grow 100ms ease 2000ms reverse forwards",
         "slide-right": "slide-right 1250ms ease",
         "card-transition": "card-transition 2000ms ease",
         blinking: "blinking 650ms ease infinite",
@@ -70,6 +79,7 @@ export default {
         "enter-1000": "enter 650ms ease 1 1000ms forwards",
         "enter-instant": "enter 300ms ease forwards",
         "svg-stroke-fill": "svg-stroke-fill 1000ms ease-in-out forwards",
+        countdown: "countdown ease 2000ms forwards 100ms",
       },
       boxShadow: {
         project: "0 0 0 1000px inset #0000008f, 0 0 45px 0 inset black;",
