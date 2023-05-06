@@ -7,9 +7,14 @@ export default function ProjectItem({
   description,
   link,
   technologies,
+  onProjectOpen,
+  index,
 }) {
   return (
-    <div className='relative flex h-72 w-full flex-col gap-7 rounded bg-blue-950 px-5 py-5 shadow-lg '>
+    <div
+      onClick={onProjectOpen}
+      index={index}
+      className='relative flex h-72 w-full cursor-pointer flex-col gap-7 rounded bg-blue-950 px-5 py-5 shadow-lg transition-transform hover:-translate-y-4'>
       <div className='flex items-center justify-center text-2xl'>
         <span className='text-3xl'>
           <FaCode />
@@ -18,7 +23,7 @@ export default function ProjectItem({
           <a href={github} target='_blank'>
             <FiGithub />
           </a>
-          <a href={link} target="_blank">
+          <a href={link} target='_blank'>
             <FiExternalLink />
           </a>
         </div>

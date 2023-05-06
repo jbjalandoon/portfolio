@@ -12,7 +12,11 @@ const PROJECTS = [
     github: "https://github.com/jbjalandoon/alcs",
     link: "some link again",
     technologies: ["Tailwind", "React"],
-    mainImage: "https://picsum.photos/200",
+    images: [
+      "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+      "https://www.doubledtrailers.com/assets/images/random%20horse%20facts%20shareable.png",
+      "https://randomwordgenerator.com/img/picture-generator/chair-1840011_640.jpg",
+    ],
   },
   {
     title: "Title 2",
@@ -20,7 +24,11 @@ const PROJECTS = [
     github: "some link",
     technologies: ["Tailwind", "React"],
     link: "some link again",
-    mainImage: "https://picsum.photos/200",
+    images: [
+      "https://picsum.photos/1024/786",
+      "https://picsum.photos/1024/786",
+      "https://picsum.photos/1024/786",
+    ],
   },
   {
     title: "Title 3",
@@ -28,7 +36,11 @@ const PROJECTS = [
     github: "some link",
     technologies: ["Tailwind", "React"],
     link: "some link again",
-    mainImage: "https://picsum.photos/200",
+    images: [
+      "https://picsum.photos/1024/786",
+      "https://picsum.photos/1024/786",
+      "https://picsum.photos/1024/786",
+    ],
   },
   {
     title: "Title 4",
@@ -36,12 +48,15 @@ const PROJECTS = [
     github: "some link",
     technologies: ["Tailwind", "React"],
     link: "some link again",
-    mainImage: "https://picsum.photos/200",
+    images: [
+      "https://picsum.photos/1024/786",
+      "https://picsum.photos/1024/786",
+      "https://picsum.photos/1024/786",
+    ],
   },
 ];
 
 export default function Projects() {
-  const [index, setIndex] = useState(0);
   const [projectOpened, setProjectOpened] = useState(null);
 
   const openProjectHandler = (e) => {
@@ -50,13 +65,6 @@ export default function Projects() {
 
   const closeProjectHandler = () => {
     setProjectOpened(null);
-  };
-
-  const prevHandler = () => {
-    setIndex((prevState) => prevState - 1);
-  };
-  const nextHandler = () => {
-    setIndex((prevState) => prevState + 1);
   };
 
   return (
@@ -68,19 +76,30 @@ export default function Projects() {
             Here are the things that I made using different technologies.
           </p>
         </div>
-        <div className='grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
-          {PROJECTS.map((e) => (
+        <div className='grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3'>
+          {PROJECTS.map((e, i) => (
             <ProjectItem
               title={e.title}
               key={e.title}
               description={e.description}
               technologies={e.technologies}
+              index={i}
               github={e.github}
               link={e.link}
+              onProjectOpen={openProjectHandler}
             />
           ))}
         </div>
       </div>
+
+      {projectOpened !== null &&
+        createPortal(
+          <ProjectDetails
+            details={PROJECTS[projectOpened]}
+            onProjectClose={closeProjectHandler}
+          />,
+          document.body
+        )}
     </>
   );
 }

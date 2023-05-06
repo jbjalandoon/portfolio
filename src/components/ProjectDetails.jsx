@@ -1,40 +1,85 @@
-import { FaLink, FaGithub } from "react-icons/fa";
-import { SiTailwindcss, SiReact } from "react-icons/si";
+import { useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
+import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 export default function ProjectDetails({ onProjectClose, details }) {
-  const { title, description, github, link, technologies } = details;
+  const { title, description, github, link, technologies, images } = details;
+
+  const [activeImage, setActiveImage] = useState(0);
+
+  const prevImageHandler = () => {
+    setActiveImage((prevState) => prevState - 1);
+  };
+  const nextImageHandler = () => {
+    setActiveImage((prevState) => prevState + 1);
+  };
 
   return (
-    <div className='absolute left-0 top-0 flex h-screen w-full animate-enter-instant items-center justify-center opacity-0'>
-      <div className='bg relative z-40 flex h-3/4 w-3/4 justify-center rounded-3xl border-4 border-green-600 bg-[url("https://c4.wallpaperflare.com/wallpaper/568/232/7/texture-simple-dark-simple-background-wallpaper-preview.jpg")] bg-cover bg-no-repeat px-10 py-10 shadow-inner md:px-32 md:py-20'>
-        <button
-          className='absolute right-14 top-7 z-50 text-2xl'
-          onClick={onProjectClose}>
-          X
-        </button>
-        <div className='z-40 flex w-full flex-col gap-3'>
-          <h1 className='text-center text-5xl'>{title}</h1>
-          <div className='flex gap-4 text-2xl'></div>
-          <p className='mb-4'>{description}</p>
-          <div className='flex justify-center gap-5'>
+    <>
+      <button
+        onClick={onProjectClose}
+        className='fixed right-7 top-7 z-50 rounded-full bg-slate-300 bg-opacity-10 p-4 text-2xl transition-all duration-500 hover:bg-opacity-40'>
+        <AiOutlineClose />
+      </button>
+      <div className='fixed flex h-screen min-h-screen w-full flex-col items-center justify-center md:flex-row'>
+        <div className='relative flex h-3/4 w-full items-center justify-center gap-10 bg-black md:h-full md:w-3/4'>
+          {activeImage !== 0 && (
+            <button
+              onClick={prevImageHandler}
+              className='absolute left-7 z-50 rounded-full bg-slate-300 bg-opacity-0 p-3 text-4xl font-bold transition-all duration-500 hover:bg-opacity-40'>
+              <BsChevronLeft />
+            </button>
+          )}
+          {activeImage !== images.length - 1 && (
+            <button
+              onClick={nextImageHandler}
+              className='absolute right-7 z-50 rounded-full bg-slate-300 bg-opacity-0 p-3 text-4xl font-bold transition-all duration-500 hover:bg-opacity-40'>
+              <BsChevronRight />
+            </button>
+          )}
+          <LazyLoadImage
+            src={images[activeImage]}
+            className='max-h-full scroll-px-1 py-16'
+            alt='Image Alt'
+            PlaceholderSrc='https://upload.wikimedia.org/wikipedia/commons/3/3f/Placeholder_view_vector.svg'
+            effect='blur'
+          />
+        </div>
+        <div className='relative flex h-full w-full flex-col gap-5 justify-start md:justify-center bg-slate-900 px-6 py-10 md:w-1/4'>
+          <div className='flex gap-3 text-3xl font-bold'>
+            {title}
+            <div className='ml-auto flex gap-4'>
+              <a href={github} target='_blank'>
+                <FiGithub />
+              </a>
+              <a href={link} target='_blank'>
+                <FiExternalLink />
+              </a>
+            </div>
+          </div>
+          <div className='text-md mb-0 font-light md:mb-10'>{description}</div>
+          <div className='mb-10 hidden justify-center gap-5 text-3xl md:flex'>
+            <a href={github} target='_blank'>
+              <FiGithub />
+            </a>
+            <a href={link} target='_blank'>
+              <FiExternalLink />
+            </a>
+          </div>
+          <div className='text-md flex flex-wrap gap-4'>
             {technologies.map((e) => (
               <span
                 key={e}
-                className='text-md rounded-2xl bg-slate-200 px-3 py-1 font-bold text-black'>
+                className='md:rounded-2xl md:border-2 md:px-5 md:py-1'>
                 {e}
               </span>
             ))}
           </div>
-          <div className='mt-10 flex items-end justify-center gap-10 text-5xl'>
-            <a href={link} target='_blank'>
-              <FaLink />
-            </a>
-            <a href={github} target='_blank'>
-              <FaGithub />
-            </a>
-          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
