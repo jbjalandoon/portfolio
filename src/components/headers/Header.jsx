@@ -13,7 +13,7 @@ export default function Header({ items, title }) {
   return (
     <>
       <header
-        className={`relative top-10 z-50 mt-8 flex h-12 w-full max-w-4xl flex-col items-center justify-center md:shadow-none shadow-xl md:mb-0 mb-10`}>
+        className={`z-50 mt-20 flex w-full max-w-4xl flex-col items-center justify-center md:shadow-none shadow-xl md:mb-0 mb-10`}>
         {/* <Title>{title}</Title> */}
         <Nav items={items} />
       </header>

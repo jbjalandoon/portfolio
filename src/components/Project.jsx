@@ -61,14 +61,14 @@ export default function Projects() {
 
   return (
     <>
-      <div className='mt-0 flex flex-col justify-center gap-10 md:mt-28'>
+      <div className='md:mt-80 sm:mt-80 -mt-6 flex flex-col justify-center gap-10 lg:mt-64 xl:mt-0'>
         <div>
           <h1 className='mb-3 text-4xl'>Things that i've built</h1>
           <p className='text-lg'>
             Here are the things that I made using different technologies.
           </p>
         </div>
-        <div className='flex flex-wrap gap-10 justify-evenly mb-14'>
+        <div className='mb-14 flex flex-wrap justify-evenly gap-10'>
           {PROJECTS.map((e, i) => (
             <ProjectItem
               title={e.title}

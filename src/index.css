@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 body {
-  @apply flex flex-col items-center overflow-x-hidden bg-slate-900 text-slate-200;
+  @apply flex flex-col items-center overflow-x-hidden overflow-y-scroll bg-slate-900 text-slate-200;
   font-family: "Poppins", sans-serif;
 }
 
