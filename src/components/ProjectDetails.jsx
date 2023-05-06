@@ -51,7 +51,7 @@ export default function ProjectDetails({ onProjectClose, details }) {
         <div className='relative flex h-full w-full flex-col justify-start gap-5 bg-slate-900 px-6 py-10 md:w-1/4 md:justify-center'>
           <div className='flex gap-3 text-3xl font-bold'>
             {title}
-            <div className='ml-auto inline-block flex gap-4 md:hidden'>
+            <div className='ml-auto flex gap-4 md:hidden'>
               <a href={github} target='_blank'>
                 <FiGithub />
               </a>
