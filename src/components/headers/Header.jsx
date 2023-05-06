@@ -13,7 +13,7 @@ export default function Header({ items, title }) {
   return (
     <>
       <header
-        className={`z-50 mt-16 p-5 flex w-full max-w-4xl h-14 flex-col items-center justify-center md:shadow-none shadow-xl md:mb-0`}>
+        className={`transition-all z-50 mt-16 flex h-14 w-full max-w-4xl flex-col items-center justify-center p-5 shadow-xl md:mb-0 md:shadow-none`}>
         {/* <Title>{title}</Title> */}
         <Nav items={items} />
       </header>
