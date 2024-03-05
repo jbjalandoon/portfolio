@@ -1,14 +1,4 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaDochub,
-  FaPaperPlane,
-  FaApper,
-  FaPaperclip,
-  FaFilePdf,
-  FaFile,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "./App.css";
 import Contents from "./components/Contents";
 import Header from "./components/headers/Header";
@@ -49,7 +39,7 @@ function App() {
       <a
         href="/Jerome_Jalandoon_Resume.pdf"
         download
-        className="absolute top-1/2 z-50 animate-title text-center text-2xl md:text-6xl"
+        className="absolute top-1/2 z-30 animate-title text-center text-2xl md:text-6xl"
       >
         {currentName}
         <span className="animate-blinking">_</span>

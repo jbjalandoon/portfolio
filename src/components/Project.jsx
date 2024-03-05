@@ -69,11 +69,15 @@ export default function Projects() {
 
   return (
     <>
-      <div className="flex w-full flex-col gap-10">
+      <div className="flex w-full flex-col gap-6">
         <div>
           <h1 className="mb-3 text-4xl">Things that i&apos;ve built</h1>
           <p className="text-lg">
             Here are the things that I made using different technologies.
+          </p>
+          <p className="color text-sm text-slate-400">
+            Some projects cannot be viewed directly, but I've included a YouTube
+            video for your curiosity. 😃
           </p>
         </div>
         <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">

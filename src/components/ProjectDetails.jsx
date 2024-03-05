@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { FiGithub, FiExternalLink, FiYoutube } from "react-icons/fi";
 import { getImageURL } from "../utils/image-utils.js";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 export default function ProjectDetails({ onProjectClose, details }) {
-  const { title, description, github, link, technologies, images } = details;
+  const { title, description, github, link, technologies, images, video } =
+    details;
 
   const [activeImage, setActiveImage] = useState(0);
 
@@ -26,7 +27,7 @@ export default function ProjectDetails({ onProjectClose, details }) {
       >
         <AiOutlineClose />
       </button>
-      <div className="fixed flex h-screen min-h-screen w-full flex-col items-center justify-center md:flex-row">
+      <div className="fixed z-40 flex h-screen min-h-screen w-full flex-col items-center justify-center md:flex-row">
         <div className="relative flex h-3/4 w-full items-center justify-center gap-10 bg-black md:h-full md:w-3/4">
           {activeImage !== 0 && (
             <button
@@ -66,12 +67,21 @@ export default function ProjectDetails({ onProjectClose, details }) {
           </div>
           <div className="text-md mb-0 font-light md:mb-10">{description}</div>
           <div className="mb-10 hidden justify-center gap-5 text-3xl md:flex">
-            <a href={github} target="_blank" rel="noreferrer">
-              <FiGithub />
-            </a>
-            <a href={link} target="_blank" rel="noreferrer">
-              <FiExternalLink />
-            </a>
+            {github && (
+              <a href={github} target="_blank" rel="noreferrer">
+                <FiGithub />
+              </a>
+            )}
+            {link && (
+              <a href={link} target="_blank" rel="noreferrer">
+                <FiExternalLink />
+              </a>
+            )}
+            {video && (
+              <a href={video} target="_blank" rel="noreferrer">
+                <FiYoutube />
+              </a>
+            )}
           </div>
           <div className="text-md flex flex-wrap gap-4">
             {technologies.map((e) => (
