@@ -8,34 +8,31 @@ const PROJECTS = [
   {
     title: "My Portfolio",
     description:
-      "You're looking at it! This website was a lot of work and I'm really proud of some of the results I got, such as the svg animations and the overall aesthetic.",
-    github: "https://github.com/jbjalandoon/alcs",
-    link: "some link again",
-    technologies: ["Tailwind", "React"],
+      "Welcome to my portfolio, This portfolio is created using react and tailwind. Explore my skills, projects, and achievements showcasing my passion and dedication.",
+    github: "https://github.com/jbjalandoon/portfolio",
+    link: "https://jbjalandoon.com/",
+    technologies: ["Tailwind", "React", "HTML", "JavaScript"],
     images: [
-      "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
-      "https://www.doubledtrailers.com/assets/images/random%20horse%20facts%20shareable.png",
-      "https://randomwordgenerator.com/img/picture-generator/chair-1840011_640.jpg",
+      "portfolio-about.png",
+      "portfolio-home.png",
+      "portfolio-title.png",
     ],
   },
   {
-    title: "Title 2",
-    description: "Project Description",
+    title: "Weather App",
+    description:
+      "The weather application is created using React and Vanilla CSS. The website features a responsive design, adapting its appearance based on the width of the screen.",
     github: "some link",
-    technologies: ["Tailwind", "React"],
+    technologies: ["HTML", "JavaScript", "Vanilla CSS", "React"],
     link: "some link again",
-    images: [
-      "https://picsum.photos/1024/786",
-      "https://picsum.photos/1024/786",
-      "https://picsum.photos/1024/786",
-    ],
+    images: ["weather-home.png", "weather-mobile.png"],
   },
   {
-    title: "Title 3",
-    description: "Project Description",
-    github: "some link",
-    technologies: ["Tailwind", "React"],
-    link: "some link again",
+    title: "Schedula",
+    description:
+      "Schedula is a course scheduling and faculty loading system. It helps to easily plot a schedule of a class and faculty without thinking any conflicts of schedule in each section, room and faculty",
+    technologies: ["HTML", "NodeJS", "EJS", "CSS", "MongoDB"],
+    video: "https://youtu.be/SaI7_D8cyWc",
     images: [
       "https://picsum.photos/1024/786",
       "https://picsum.photos/1024/786",
@@ -69,14 +66,14 @@ export default function Projects() {
 
   return (
     <>
-      <div className='flex w-full flex-col gap-10'>
+      <div className="flex w-full flex-col gap-10">
         <div>
-          <h1 className='mb-3 text-4xl'>Things that i've built</h1>
-          <p className='text-lg'>
+          <h1 className="mb-3 text-4xl">Things that i've built</h1>
+          <p className="text-lg">
             Here are the things that I made using different technologies.
           </p>
         </div>
-        <div className='grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3'>
+        <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
           {PROJECTS.map((e, i) => (
             <ProjectItem
               title={e.title}
