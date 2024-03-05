@@ -1,15 +1,6 @@
-import { useState } from "react";
 import Nav from "./Nav";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import Title from "./Title";
 
-export default function Header({ items, title }) {
-  const [showHeader, setShowHeader] = useState(false);
-
-  const showHeaderHandler = () => {
-    setShowHeader((prevState) => !prevState);
-  };
-
+export default function Header({ items }) {
   return (
     <>
       <header
