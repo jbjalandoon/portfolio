@@ -9,15 +9,21 @@ const reducer = (state, action) => {
       if (state.view > 0) animationClass = "animate-slide-right";
       console.log(state.view);
       return { ...state, view: 0, animationClass };
-    case "about me":
+    case "experience":
       if (state.view > 1) animationClass = "animate-slide-right";
       return { ...state, view: 1, animationClass };
-    case "projects":
+    case "certification":
       if (state.view > 2) animationClass = "animate-slide-right";
       return { ...state, view: 2, animationClass };
-    case "contact me":
+    case "about me":
       if (state.view > 3) animationClass = "animate-slide-right";
       return { ...state, view: 3, animationClass };
+    case "projects":
+      if (state.view > 4) animationClass = "animate-slide-right";
+      return { ...state, view: 4, animationClass };
+    case "contact me":
+      if (state.view > 5) animationClass = "animate-slide-right";
+      return { ...state, view: 5, animationClass };
     default:
       return state;
   }

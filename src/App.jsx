@@ -5,7 +5,14 @@ import Header from "./components/headers/Header";
 import { useEffect, useState } from "react";
 
 function App() {
-  const views = ["home", "about me", "projects", "contact me"];
+  const views = [
+    "home",
+    "experience",
+    "certification",
+    "about me",
+    "projects",
+    "contact me",
+  ];
   const [currentName, setCurrentName] = useState("");
   const [isFirstLoad, setIsFirstLoad] = useState(true);
   const [index, setIndex] = useState(0);
@@ -25,33 +32,34 @@ function App() {
         clearTimeout(timeout);
       };
     }
-  }, [index, currentName]);
+  }, [index, currentName, isFirstLoad]);
 
   return (
     <>
-      <p className='absolute top-1/2 animate-title text-2xl md:text-6xl'>
+      <p className="absolute top-1/2 animate-title text-2xl md:text-6xl">
         {currentName}
-        <span className='animate-blinking'>_</span>
+        <span className="animate-blinking">_</span>
       </p>
       <main
-        id='main'
-        className='flex h-fit w-full animate-enter flex-col items-center opacity-0 md:h-screen'>
+        id="main"
+        className="flex h-fit w-full animate-enter flex-col items-center opacity-0 md:h-screen"
+      >
         <Header items={views} />
         <Contents items={views} />
-        <div className='relative bottom-0 flex h-24 w-full items-center justify-center'>
-          <ul className='flex gap-6 text-2xl'>
+        <div className="relative bottom-0 flex h-24 w-full items-center justify-center">
+          <ul className="flex gap-6 text-2xl">
             <li>
-              <a href='mailto:jerome.jalandoon@gmail.com'>
+              <a href="mailto:jerome.jalandoon@gmail.com">
                 <FaEnvelope />
               </a>
             </li>
             <li>
-              <a href='https://github.com/jbjalandoon' target='_blank'>
+              <a href="https://www.linkedin.com/in/jbjalandoon" target="_blank" rel="noreferrer">
                 <FaLinkedin />
               </a>
             </li>
             <li>
-              <a href='https://www.linkedin.com/in/jbjalandoon' target='_blank'>
+              <a href="https://github.com/jbjalandoon" target="_blank" rel="noreferrer">
                 <FaGithub />
               </a>
             </li>
