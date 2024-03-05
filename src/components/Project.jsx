@@ -21,9 +21,9 @@ const PROJECTS = [
     title: "Weather App",
     description:
       "The weather application is created using React and Vanilla CSS. The website features a responsive design, adapting its appearance based on the width of the screen.",
-    github: "some link",
+    github: "https://github.com/jbjalandoon/weather-react",
     technologies: ["HTML", "JavaScript", "Vanilla CSS", "React"],
-    link: "some link again",
+    link: "https://weather.jbjalandoon.com/",
     images: ["weather-home.png", "weather-mobile.png"],
   },
   {
