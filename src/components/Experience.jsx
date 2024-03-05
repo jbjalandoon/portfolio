@@ -20,7 +20,7 @@ export default function Experience() {
       <div className="flex flex-col">
         {EXPERIENCES.map((e, i) => (
           <div key={i} className="flex flex-col gap-2">
-            <h1 className="text-5xl">{e.company}</h1>
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl">{e.company}</h1>
             <span className="text-2xl">{e.role}</span>
             <span className="text-xl">{`${e.start} - ${e.end}`}</span>
             <ul className="ml-8 list-disc">

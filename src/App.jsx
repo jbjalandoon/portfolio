@@ -36,7 +36,7 @@ function App() {
 
   return (
     <>
-      <p className="absolute top-1/2 animate-title text-2xl md:text-6xl">
+      <p className="absolute top-1/2 text-center animate-title text-2xl md:text-6xl">
         {currentName}
         <span className="animate-blinking">_</span>
       </p>

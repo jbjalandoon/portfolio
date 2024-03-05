@@ -36,7 +36,7 @@ export default function Certification() {
     <div className="w-100 flex flex-col gap-8">
       <div className="flex flex-col gap-7">
         <h1 className="text-left text-4xl font-bold">Certificate</h1>
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {CERTIFICATIONS.map((e, i) => (
             <CertificationItem
               key={i}
