@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import Card from "./Card";
 import { ViewContext } from "../store/ViewContext";
-import React, { useRef } from "react";
 import Contacts from "./Contacts";
 import Projects from "./Project";
 import About from "./About";
