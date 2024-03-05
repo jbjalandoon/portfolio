@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import ProjectItem from "./ProjectItem";
 import { createPortal } from "react-dom";
 import ProjectDetails from "./ProjectDetails";
@@ -31,24 +30,28 @@ const PROJECTS = [
     title: "Schedula",
     description:
       "Schedula is a course scheduling and faculty loading system. It helps to easily plot a schedule of a class and faculty without thinking any conflicts of schedule in each section, room and faculty",
-    technologies: ["HTML", "NodeJS", "EJS", "CSS", "MongoDB"],
+    technologies: ["HTML", "NodeJS", "EJS", "CSS", "MongoDB", "JavaScript"],
     video: "https://youtu.be/SaI7_D8cyWc",
     images: [
-      "https://picsum.photos/1024/786",
-      "https://picsum.photos/1024/786",
-      "https://picsum.photos/1024/786",
+      "stica-faculty-loading.png",
+      "stica-login.png",
+      "stica-schedule.png",
+      "stica-warning.png",
     ],
   },
   {
-    title: "Title 4",
-    description: "Project Description",
-    github: "some link",
-    technologies: ["Tailwind", "React"],
-    link: "some link again",
+    title: "Online Document Request System",
+    description:
+      "Online Document Request can help the students to request an academic related document to school with ease. I also provides the registrar to easily store a record of the requests",
+    video:
+      "https://www.youtube.com/playlist?list=PLW49qkGULjr4M-99QpiDcSkYvTUpmxE6W",
+    technologies: ["PHP", "CodeIgniter", "HTML", "CSS", "JavaScript"],
     images: [
-      "https://picsum.photos/1024/786",
-      "https://picsum.photos/1024/786",
-      "https://picsum.photos/1024/786",
+      "odrs-done.png",
+      "odrs-home.png",
+      "odrs-login.png",
+      "odrs-pending.png",
+      "odrs-stub.png",
     ],
   },
 ];
@@ -68,7 +71,7 @@ export default function Projects() {
     <>
       <div className="flex w-full flex-col gap-10">
         <div>
-          <h1 className="mb-3 text-4xl">Things that i've built</h1>
+          <h1 className="mb-3 text-4xl">Things that i&apos;ve built</h1>
           <p className="text-lg">
             Here are the things that I made using different technologies.
           </p>
@@ -80,6 +83,7 @@ export default function Projects() {
               key={e.title}
               description={e.description}
               technologies={e.technologies}
+              video={e.video}
               index={i}
               github={e.github}
               link={e.link}
