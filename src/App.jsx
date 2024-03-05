@@ -1,4 +1,14 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaDochub,
+  FaPaperPlane,
+  FaApper,
+  FaPaperclip,
+  FaFilePdf,
+  FaFile,
+} from "react-icons/fa";
 import "./App.css";
 import Contents from "./components/Contents";
 import Header from "./components/headers/Header";
@@ -36,17 +46,21 @@ function App() {
 
   return (
     <>
-      <p className="absolute top-1/2 text-center animate-title text-2xl md:text-6xl">
+      <a
+        href="/Jerome_Jalandoon_Resume.pdf"
+        download
+        className="absolute top-1/2 z-50 animate-title text-center text-2xl md:text-6xl"
+      >
         {currentName}
         <span className="animate-blinking">_</span>
-      </p>
+      </a>
       <main
         id="main"
         className="flex h-fit w-full animate-enter flex-col items-center opacity-0 md:h-screen"
       >
         <Header items={views} />
         <Contents items={views} />
-        <div className="relative bottom-0 flex h-24 w-full items-center justify-center">
+        <div className="relative bottom-0 flex h-24 w-full items-center justify-center py-5">
           <ul className="flex gap-6 text-2xl">
             <li>
               <a href="mailto:jerome.jalandoon@gmail.com">
@@ -54,12 +68,20 @@ function App() {
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/jbjalandoon" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.linkedin.com/in/jbjalandoon"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaLinkedin />
               </a>
             </li>
             <li>
-              <a href="https://github.com/jbjalandoon" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/jbjalandoon"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaGithub />
               </a>
             </li>

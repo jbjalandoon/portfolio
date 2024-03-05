@@ -1,3 +1,5 @@
+import { FaDownload, FaFile } from "react-icons/fa";
+
 export default function Home() {
   return (
     <div className="flex flex-col justify-center gap-10">
@@ -9,6 +11,13 @@ export default function Home() {
         <span className="text-3xl xs:text-4xl sm:text-5xl">
           I&apos;m a Web Developer.
         </span>
+        <a
+          href="/Jerome_Jalandoon_Resume.pdf"
+          download
+          className="relative flex w-min items-center gap-3 border border-green-700 px-5 py-4 transition-all duration-500 after:absolute after:left-0 after:top-0 after:-z-50 after:h-full after:w-0 after:bg-green-700 after:transition-all after:duration-1000 hover:text-black hover:after:w-full"
+        >
+          <FaDownload /> Resume
+        </a>
         <p className="w-full text-lg font-light md:w-3/5">
           Attained cum laude honors upon completion of a Bachelor of Science in
           Information Technology program at Polytechnic University of the
